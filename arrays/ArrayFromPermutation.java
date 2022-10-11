@@ -7,10 +7,11 @@ class Main {
         int n = nums.length;
 
         for (int i = 0; i < n; i++) {
-
-            // store 2 values at 1 index, using Euclid's Division Algorithm (a = bq + r);
-            // can later retrieve values with either % or / calculation
-            nums[i] = n * (nums[nums[i]] % n) + nums[i];
+            // store 2 values at 1 index, using Euclid's Division Lemma (a = bq + r);
+            // conditions: b and r are not multiples of q and r < q
+            // can later retrieve values with either / (b) or % (r) calculation
+            // b = nums[nums[i]], q = nums.length, r = nums[i]
+            nums[i] = (nums[nums[i]] % n) * n + nums[i];
         }
 
         for (int i = 0; i < n; i++) {
