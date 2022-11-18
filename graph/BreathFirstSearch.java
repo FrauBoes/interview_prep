@@ -17,11 +17,11 @@ class BreathFirstSearch {
 
         while (!queue.isEmpty()) {
             int curr = queue.remove();
+            visited[curr] = true;
             if (curr == destination) return true;
 
             for (int node : graph.get(curr)) {
                 if (!visited[node]) {
-                    visited[node] = true;
                     queue.add(node);
                 }
             }
